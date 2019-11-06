@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div>{{tsVal1 + tsVal2}}</div>
+    <div v-on:click="handleChange('Table')">{{tsVal1 + tsVal2}}</div>
     <div>{{jsVal1 + jsVal2}}</div>
+    <router-view></router-view>
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import { Component, Vue, Provide } from 'vue-property-decorator'
@@ -24,6 +25,9 @@ export default class home extends Vue{
       jsVal1:"1",
       jsVal2:"2"
     }
+  }
+  handleChange(path:any){
+    this.$router.push({path:path})
   }
 };
 </script>
