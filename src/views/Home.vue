@@ -18,12 +18,12 @@ import { Component, Vue, Provide } from 'vue-property-decorator'
   }
 })
 export default class home extends Vue{
-  tsVal1: string = "11";
-  tsVal2: string = "22";
+  tsVal1: string = "11 at home";
+  tsVal2: string = "22 at home";
   data(){
     return{
-      jsVal1:"1",
-      jsVal2:"2"
+      jsVal1:"1 at home",
+      jsVal2:"2 at home"
     }
   }
   handleChange(path:any){
