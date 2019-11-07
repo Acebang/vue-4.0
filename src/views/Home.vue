@@ -2,6 +2,7 @@
   <div>
     <div v-on:click="handleChange('Table')">{{tsVal1 + tsVal2}}</div>
     <div>{{jsVal1 + jsVal2}}</div>
+    <div v-on:click="handleChange('Interface')">点击这里测试灏东接口</div>
     <router-view></router-view>
   </div>
 </template>
