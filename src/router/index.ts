@@ -24,6 +24,12 @@ const routes = [
     name: "Table",
     component:() =>
       import("../views/Table.vue")
+  },
+  {
+    path: "/Interface",
+    name: "Interface",
+    component:() =>
+      import("../views/Interface.vue")
   }
 ];
 
