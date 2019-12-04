@@ -29,9 +29,16 @@ export default {
         },
         GetDataList:function(){
             axios.post('/InvestmentProject/GetDataList', {
-                "page_number": 1,
-                "page_size": 10,
-                "contains_draft": true
+                'page_number': 1,
+                'page_size': 10,
+                'sort_key': '', 
+                'sort_order': '', 
+                'search_value': '', 
+                'project_name': '', 
+                'investment_way': '', 
+                'project_status': '', 
+                'leaderid': '', 
+                'contains_draft': true
             })
             .then(function (response) {
                 console.log(response);
