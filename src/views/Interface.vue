@@ -15,11 +15,12 @@ export default {
     },
     methods:{
         interfacetest:function(){
-            axios.post('/Login/Login', {
+            var _this = this;
+            axios.post('/Login/Login', _this.formData({
                 'username': 'GRGBaseAdmin',
                 'password': '321654a',
                 'websiteid': '5bbade37-3aac-4807-9c77-9c471de1270a'
-            })
+            }))
             .then(function (response) {
                 console.log(response);
             })
@@ -46,6 +47,13 @@ export default {
             .catch(function (error) {
                 console.log(error);
             });
+        },
+        formData:function(){
+            var form = new FormData()
+            for (let i in params) {
+                form.append(i, params[i])
+            }
+            return form
         }
     }
 }
