@@ -16,11 +16,11 @@ export default {
     methods:{
         interfacetest:function(){
             var _this = this;
-            axios.post('/Login/Login', _this.formData({
+            axios.post('/Login/Login', {
                 'username': 'GRGBaseAdmin',
                 'password': '321654a',
                 'websiteid': '5bbade37-3aac-4807-9c77-9c471de1270a'
-            }))
+            })
             .then(function (response) {
                 console.log(response);
             })
@@ -29,7 +29,8 @@ export default {
             });
         },
         GetDataList:function(){
-            axios.post('/InvestmentProject/GetDataList', {
+            var _this = this;
+            axios.post('/InvestmentProject/GetDataList', _this.formData({
                 'page_number': 1,
                 'page_size': 10,
                 'sort_key': '', 
@@ -40,7 +41,7 @@ export default {
                 'project_status': '', 
                 'leaderid': '', 
                 'contains_draft': true
-            })
+            }))
             .then(function (response) {
                 console.log(response);
             })
@@ -48,7 +49,7 @@ export default {
                 console.log(error);
             });
         },
-        formData:function(){
+        formData:function(params){
             var form = new FormData()
             for (let i in params) {
                 form.append(i, params[i])
